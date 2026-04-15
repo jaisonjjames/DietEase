@@ -1,0 +1,252 @@
+:root {
+    --primary: #1b5e20;
+    --primary-light: #4c8c4a;
+    --secondary: #A5D6A7;
+    --accent: #FFD54F;
+    --bg: #FAFAFA;
+    --card-bg: #FFFFFF;
+    --text-main: #263238;
+    --text-muted: #546E7A;
+    --white: #FFFFFF;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --radius: 16px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.app-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.unit-toggle {
+    display: flex;
+    background: #EEEEEE;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 24px;
+}
+
+.unit-toggle button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+}
+
+.unit-toggle button.active {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: var(--primary-light);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.results-section {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card {
+    background: var(--primary);
+    color: white;
+    padding: 24px;
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.stat-val {
+    font-size: 3rem;
+    font-weight: 800;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.meal-item {
+    border-left: 4px solid var(--primary);
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #F9FDF9;
+    border-radius: 0 12px 12px 0;
+}
+
+.meal-tag {
+    font-size: 0.75rem;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+.meal-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meal-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.shuffle-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.btn-shuffle {
+    background: #F1F8E9;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.water-intake {
+    background: #E3F2FD;
+    padding: 16px;
+    border-radius: var(--radius);
+    margin-top: 24px;
+    text-align: center;
+    color: #1565C0;
+}
+
+.water-val {
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+footer {
+    margin-top: 40px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    .card { padding: 20px; }
+    .stat-val { font-size: 2.5rem; }
+}
