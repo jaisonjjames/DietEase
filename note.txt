@@ -1,0 +1,53 @@
+Implementation Plan - Refactor to React + TypeScript
+This plan covers the transition of the "Fat Loss Diet Plan Creator" from a single-file vanilla application to a modern, scalable React components codebase built with TypeScript and Vite.
+
+User Review Required
+IMPORTANT
+
+Project Structure: I will initialize a new Vite project in the current directory. This will overwrite some files or create a new directory structure. I will backup the existing index.html to index.html.bak first.
+
+NOTE
+
+Styling: I will continue using Vanilla CSS (via App.css and component-specific CSS files) to maintain the requested "Clean Label" aesthetic while leveraging React's component-based scoping.
+
+Proposed Changes
+[NEW] React + TypeScript Foundation
+Project Initialization
+Run npx create-vite@latest ./ --template react-ts --no-interactive.
+Clean up default Vite boilerplate (assets, standard CSS).
+[COMPONENT] Architecture
+src/types/index.ts [NEW]
+Define interfaces for Meal, UserInputs, Results, and Units.
+
+src/data/meals.ts [NEW]
+Export the hardcoded MEAL_BANK constant.
+
+src/utils/calculations.ts [NEW]
+Port the Mifflin-St Jeor and Water Intake logic into pure TS functions.
+
+src/components/Header.tsx [NEW]
+The Emerald Green branding header.
+
+src/components/CalculatorForm.tsx [NEW]
+State-driven form for Age, Weight, Height, etc.
+Unit toggle (Imperial/Metric).
+src/components/ResultsDisplay.tsx [NEW]
+Target calorie visualization.
+Water intake stats.
+src/components/MealPlanCard.tsx [NEW]
+Display the 3 meals.
+Shuffle logic utilizing React state.
+Technical Details
+State Management: Use React useState and useEffect for form handling and results calculation.
+Styling: Refactor the existing emerald-green styles into a global index.css and modular App.css.
+TypeScript: Ensure strict typing for meal preferences and activity levels.
+Open Questions
+Do you want the results to update automatically as you type, or keep the "Create My Plan" button?
+Should I add a "Download PDF/Print" feature, which becomes much easier with React?
+Verification Plan
+Automated Tests
+I will run npm run build to ensure TypeScript compilation passes.
+Manual Verification
+Run npm run dev and verify calculation parity with the previous vanilla version.
+Test unit toggle reactivity.
+Verify mobile responsiveness in the React version.
